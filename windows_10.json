@@ -31,7 +31,8 @@
         "RemoteDisplay.vnc.port": "5900",
         "memsize": "2048",
         "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068"
+        "scsi0.virtualDev": "lsisas1068",
+        "gui.applyHostDisplayScalingToGuest": "false"
       },
       "vmx_remove_ethernet_interfaces": true,
       "vnc_port_max": 5980,
