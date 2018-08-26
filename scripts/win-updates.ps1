@@ -126,7 +126,6 @@ function Install-WindowsUpdates() {
         LogWrite 'No updates available to install...'
         $global:MoreUpdates=0
         $global:RestartRequired=0
-        & "a:\enable-winrm.ps1"
         break
     }
 
