@@ -59,20 +59,27 @@
       "type": "windows-shell"
     },
     {
-      "scripts": [
-        "./scripts/debloat-windows.ps1"
-      ],
-      "type": "powershell"
-    },
-    {
       "restart_timeout": "{{user `restart_timeout`}}",
       "type": "windows-restart"
     },
     {
       "scripts": [
-        "./scripts/set-powerplan.ps1",
-        "./extern/Win10-Initial-Setup-Script/Win10.ps1 -preset ./extern/Win10-Initial-Setup-Script-Config/Packer.preset"
+        "./scripts/set-powerplan.ps1"
       ],
+      "type": "powershell"
+    },
+    {
+      "type": "file",
+      "source": "./extern/Win10-Initial-Setup-Script/Win10.ps1",
+      "destination": "C:\\Win10Setup.ps1"
+    },
+    {
+      "type": "file",
+      "source": "./extern/Win10-Initial-Setup-Script-Config/Packer.preset",
+      "destination": "C:\\Packer.preset"
+    },
+    {
+      "inline": ["C:\\Win10Setup.ps1 -preset C:\\Packer.preset"],
       "type": "powershell"
     },
     {
