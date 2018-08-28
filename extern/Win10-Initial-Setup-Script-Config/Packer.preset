@@ -52,15 +52,14 @@ EnableRemoteDesktop
 DisableAutoplay
 DisableAutorun
 # EnableStorageSense
-# DisableDefragmentation
+DisableDefragmentation
 # DisableSuperfetch
 # DisableIndexing
 # SetBIOSTimeUTC
 # EnableHibernation
 # DisableSleepButton
-# DisableSleepTimeout
-# DisableFastStartup
 DisableSleepTimeout
+DisableFastStartup
 
 DisableActionCenter
 HideAccountProtectionWarn
