@@ -1,0 +1,8 @@
+dev:
+  image: ubuntu:bionic
+  script:
+    - ls /dev
+    - uptime
+    - apt -v
+  only:
+    kubernetes: active
