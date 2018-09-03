@@ -9,7 +9,7 @@ dev-gce-kube:
   tags:
     - kubernetes
 
-dev-gce-kube:
+dev-gitlab-org:
   image: ubuntu:bionic
   script:
     - ls /dev
