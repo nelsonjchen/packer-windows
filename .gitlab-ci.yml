@@ -29,7 +29,7 @@ dev-gce-kube:
     - cat /proc/1/cgroup
     - docker build -t test .
     - docker run test echo hello docker
-    - docker run test ls /dev
+    - docker run --privileged test ls /dev
     - docker run test cat /proc/cpuinfo
     - docker run test uptime
     - docker run test cat /proc/1/cgroup
