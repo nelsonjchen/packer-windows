@@ -8,14 +8,4 @@ dev-gce-kube:
     - cat /proc/1/cgroup
   tags:
     - kubernetes
-
-dev-gitlab-org:
-  image: ubuntu:bionic
-  script:
-    - ls /dev
-    - cat /proc/cpuinfo
-    - uptime
-    - apt -v
-    - cat /proc/1/cgroup
-  tags:
-    - gitlab-org
+    
