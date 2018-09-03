@@ -33,5 +33,6 @@ dev-gce-kube:
     - docker run test cat /proc/cpuinfo
     - docker run test uptime
     - docker run test cat /proc/1/cgroup
+    - docker run test kvm-ok
   tags:
     - kubernetes
