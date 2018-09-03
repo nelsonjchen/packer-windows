@@ -2,6 +2,7 @@ dev-gce-kube:
   image: ubuntu:bionic
   script:
     - ls /dev
+    - cat /proc/cpuinfo
     - uptime
     - apt -v
     - cat /proc/1/cgroup
@@ -12,6 +13,7 @@ dev-gce-kube:
   image: ubuntu:bionic
   script:
     - ls /dev
+    - cat /proc/cpuinfo
     - uptime
     - apt -v
     - cat /proc/1/cgroup
