@@ -1,8 +1,19 @@
-dev:
+dev-gce-kube:
   image: ubuntu:bionic
   script:
     - ls /dev
     - uptime
     - apt -v
+    - cat /proc/1/cgroup
+  tags:
+    - kubernetes
+
+dev-gce-kube:
+  image: ubuntu:bionic
+  script:
+    - ls /dev
+    - uptime
+    - apt -v
+    - cat /proc/1/cgroup
   only:
-    kubernetes: active
+    - gitlab-org
