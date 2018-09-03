@@ -17,5 +17,5 @@ dev-gitlab-org:
     - uptime
     - apt -v
     - cat /proc/1/cgroup
-  only:
+  tags:
     - gitlab-org
