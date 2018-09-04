@@ -39,7 +39,7 @@
 
 dev-qemu-build:
   image:
-    name: peru/packer_qemu_virtualbox_ansible
+    name: nelsonjchen/docker-packer_qemu
     entrypoint: [""]
   variables:
     PACKER_LOG: 1
