@@ -45,6 +45,7 @@
       "boot_wait": "6m",
       "communicator": "winrm",
       "disk_size": "20480",
+      "disk_interface": "ide",
       "floppy_files": [
         "{{user `autounattend`}}",
         "./scripts/fixnetwork.ps1",
@@ -63,6 +64,7 @@
         [ "-m", "2048m" ],
         [ "-cpu", "host,kvm=off,hv_relaxed,hv_spinlocks=0x1fff,hv_time,hv_vapic,hv_vendor_id=0xDEADBEEFFF" ],
         [ "-rtc", "clock=host,base=localtime"],
+        [ "-device", "usb-tablet"],
         [ "-smp", "2,sockets=1,cores=2,threads=0" ]
       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
