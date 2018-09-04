@@ -44,6 +44,9 @@ dev-qemu-build:
   variables:
     PACKER_LOG: 1
   script:
+    - apt-get update
+    - apt-get install cpu-checker
+    - kvm-ok
     - ls
     - packer build --only=qemu windows_10.json
   tags:
