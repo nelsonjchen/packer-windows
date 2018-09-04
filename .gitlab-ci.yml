@@ -1,41 +1,41 @@
-dev-gce-kube:
-  image: docker:stable
-  variables:
-    # When using dind service we need to instruct docker, to talk with the
-    # daemon started inside of the service. The daemon is available with
-    # a network connection instead of the default /var/run/docker.sock socket.
-    #
-    # The 'docker' hostname is the alias of the service container as described at
-    # https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#accessing-the-services
-    #
-    # Note that if you're using Kubernetes executor, the variable should be set to
-    # tcp://localhost:2375 because of how Kubernetes executor connects services
-    # to the job container
-    DOCKER_HOST: tcp://localhost:2375/
-    # When using dind, it's wise to use the overlayfs driver for
-    # improved performance.
-    DOCKER_DRIVER: overlay2
+# dev-gce-kube:
+#   image: docker:stable
+#   variables:
+#     # When using dind service we need to instruct docker, to talk with the
+#     # daemon started inside of the service. The daemon is available with
+#     # a network connection instead of the default /var/run/docker.sock socket.
+#     #
+#     # The 'docker' hostname is the alias of the service container as described at
+#     # https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#accessing-the-services
+#     #
+#     # Note that if you're using Kubernetes executor, the variable should be set to
+#     # tcp://localhost:2375 because of how Kubernetes executor connects services
+#     # to the job container
+#     DOCKER_HOST: tcp://localhost:2375/
+#     # When using dind, it's wise to use the overlayfs driver for
+#     # improved performance.
+#     DOCKER_DRIVER: overlay2
 
-  services:
-  - docker:dind
+#   services:
+#   - docker:dind
 
-  before_script:
-  - docker info
+#   before_script:
+#   - docker info
 
-  script:
-    - ls /dev
-    - cat /proc/cpuinfo
-    - uptime
-    - cat /proc/1/cgroup
-    - docker build -t test .
-    - docker run test echo hello docker
-    - docker run --privileged test ls /dev
-    - docker run test cat /proc/cpuinfo
-    - docker run test uptime
-    - docker run test cat /proc/1/cgroup
-    - docker run --privileged test kvm-ok
-  tags:
-    - kubernetes
+#   script:
+#     - ls /dev
+#     - cat /proc/cpuinfo
+#     - uptime
+#     - cat /proc/1/cgroup
+#     - docker build -t test .
+#     - docker run test echo hello docker
+#     - docker run --privileged test ls /dev
+#     - docker run test cat /proc/cpuinfo
+#     - docker run test uptime
+#     - docker run test cat /proc/1/cgroup
+#     - docker run --privileged test kvm-ok
+#   tags:
+#     - kubernetes
 
 dev-qemu-build:
   image:
@@ -43,6 +43,7 @@ dev-qemu-build:
     entrypoint: [""]
   script:
     - ls
+    - packer build --only=qemu windows_10.json
   tags:
     - kubernetes
 
