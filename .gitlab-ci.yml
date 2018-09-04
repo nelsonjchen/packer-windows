@@ -41,6 +41,8 @@ dev-qemu-build:
   image:
     name: peru/packer_qemu_virtualbox_ansible
     entrypoint: [""]
+  variables:
+    PACKER_LOG: 1
   script:
     - ls
     - packer build --only=qemu windows_10.json
