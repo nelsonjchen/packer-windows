@@ -36,3 +36,13 @@ dev-gce-kube:
     - docker run --privileged test kvm-ok
   tags:
     - kubernetes
+
+dev-qemu-build:
+  image:
+    name: peru/packer_qemu_virtualbox_ansible
+    entrypoint: [""]
+  script:
+    - ls
+  tags:
+    - kubernetes
+
