@@ -105,11 +105,6 @@
       "destination": "C:\\Win10Setup.ps1"
     },
     {
-      "type": "file",
-      "source": "./extern/Win10-Initial-Setup-Script-Config/Packer.preset",
-      "destination": "C:\\Packer.preset"
-    },
-    {
       "inline": ["C:\\Win10Setup.ps1 -preset C:\\Packer.preset"],
       "type": "powershell"
     },
