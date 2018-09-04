@@ -64,6 +64,7 @@
         [ "-m", "2048m" ],
         [ "-cpu", "host,kvm=off,hv_relaxed,hv_spinlocks=0x1fff,hv_time,hv_vapic,hv_vendor_id=0xDEADBEEFFF" ],
         [ "-rtc", "clock=host,base=localtime"],
+        [ "-device", "piix3-usb-uhci"],
         [ "-device", "usb-tablet"],
         [ "-smp", "2,sockets=1,cores=2,threads=0" ]
       ],
