@@ -66,6 +66,7 @@
         [ "-device", "usb-tablet"],
         [ "-m", "2048m" ],
         [ "-rtc", "clock=host,base=localtime"],
+        [ "-drive", "file=iso/virtio-win.iso,media=cdrom,index=3" ],
         [ "-smp", "2,sockets=1,cores=2,threads=0" ]
       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
