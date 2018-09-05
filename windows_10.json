@@ -61,8 +61,6 @@
       "iso_url": "{{user `iso_url`}}",
       "qemuargs": [
         [ "-cpu", "host,kvm=off,hv_relaxed,hv_spinlocks=0x1fff,hv_time,hv_vapic,hv_vendor_id=0xDEADBEEFFF" ],
-        [ "-device", "piix3-usb-uhci"],
-        [ "-device", "usb-tablet"],
         [ "-drive", "file=iso/virtio-win.iso,media=cdrom,index=3" ],
         [ "-drive", "file=output-qemu/{{ .Name }},if=virtio,cache=writeback,discard=ignore,format=qcow2,index=1" ],
         [ "-m", "2048m" ],
