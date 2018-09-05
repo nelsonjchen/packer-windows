@@ -45,7 +45,6 @@
       "boot_wait": "6m",
       "communicator": "winrm",
       "disk_size": "20480",
-      "disk_interface": "ide",
       "floppy_files": [
         "{{user `autounattend`}}",
         "./scripts/fixnetwork.ps1",
@@ -64,15 +63,16 @@
         [ "-cpu", "host,kvm=off,hv_relaxed,hv_spinlocks=0x1fff,hv_time,hv_vapic,hv_vendor_id=0xDEADBEEFFF" ],
         [ "-device", "piix3-usb-uhci"],
         [ "-device", "usb-tablet"],
+        [ "-drive", "file=iso/virtio-win.iso,media=cdrom,index=3" ],
+        [ "-drive", "file=output-qemu/{{ .Name }},if=virtio,cache=writeback,discard=ignore,format=qcow2,index=1" ],
         [ "-m", "2048m" ],
         [ "-rtc", "clock=host,base=localtime"],
-        [ "-drive", "file=iso/virtio-win.iso,media=cdrom,index=3" ],
         [ "-smp", "2,sockets=1,cores=2,threads=0" ]
       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "qemu",
-      "vnc_port_max": 5900,
-      "vnc_port_min": 5900,
+      "vnc_port_max": 5901,
+      "vnc_port_min": 5901,
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
