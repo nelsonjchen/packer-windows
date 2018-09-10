@@ -48,6 +48,9 @@ dev-qemu-build:
     - ./virtio.sh
     - packer build --only=qemu windows_10.json
     - du -sh *
+    - qemu-img convert -c -O qcow2 output-qemu/packer-qemu output-qemu/packer-qemu.qcow2
+    - rm output-qemu/packer-qemu
+    - du -sh *
   tags:
     - kubernetes
 
