@@ -47,6 +47,7 @@ dev-qemu-build:
     - ls -lh /dev
     - ./virtio.sh
     - packer build --only=qemu windows_10.json
+    - du -sh *
   tags:
     - kubernetes
 
