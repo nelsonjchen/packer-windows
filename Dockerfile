@@ -1,6 +1,13 @@
-FROM ubuntu:bionic
+FROM nelsonjchen/docker-packer_qemu AS builder
+
+WORKDIR /project
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
-    cpu-checker
+COPY . .
+
+RUN ls
+
+FROM nelsonjchen/docker-packer_qemu AS runner
+
+RUN ls
